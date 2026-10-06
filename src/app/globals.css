@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter+Tight:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@source "../components/**/*.{ts,tsx,js,jsx}";
+@source "../app/**/*.{ts,tsx,js,jsx}";
+
+:root {
+  --bg: #FBF9F4;
+  --bg-2: #F4F1EA;
+  --panel: #ffffff;
+  --line: #e2e1da;
+  --ink: #1A1714;
+  --ink-2: #3E3844;
+  --muted: #5c5764;
+  --panel-2: #F9F9FB;
+  --line-2: #D1D5DB;
+  --primary: #9025F2;
+  --primary-2: #7a17d6;
+  --primary-soft: #f3e8ff;
+  --primary-tint: #faf5ff;
+  --pink: #ec4899;
+  --yellow: #f5b500;
+  --green: #22c55e;
+  --grad: linear-gradient(90deg, #9025F2 0%, #b260ff 60%, #ec4899 100%);
+  --grad-soft: linear-gradient(135deg, rgba(144,37,242,.08) 0%, rgba(236,72,153,.08) 100%);
+}
+
+.dark {
+  --bg: #141017;
+  --bg-2: #1A1620;
+  --panel: #1E1828;
+  --line: #322A40;
+  --ink: #ffffff;
+  --ink-2: #e2e8f0;
+  --muted: #A79FB0;
+}
+
+* {
+  border-color: var(--line);
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgba(144,37,242,.20);
+  color: var(--ink);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ink);
+  font-family: 'Inter Tight', sans-serif;
+  letter-spacing: -0.02em;
+}

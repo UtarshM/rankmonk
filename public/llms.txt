@@ -1,0 +1,20 @@
+# RankMonk
+> RankMonk.ai provides autonomous Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) SaaS intelligence.
+
+## Canonical Information
+- Website: https://rankmonk.ai
+- Brand Name: RankMonk
+- Industry: AI Search & Answer Engine Optimization (AEO / GEO)
+
+## Core Solutions & Offerings
+- 11-Test GEO Diagnostic Engine with Before/After Actionable Code Remediation
+- Multi-Model AEO Visibility Matrix (ChatGPT, Claude, Perplexity, Gemini, Grok)
+- Competitive AI Share of Voice & Benchmarking
+- AI Referral Traffic Studio & GA4 Attribution
+- Content Gap Studio & 1-Click Editorial Brief Generator
+- llms.txt Protocol Standard Generator & Crawler Directives Auditor
+
+## Machine-Readable Resources
+- Sitemap: https://rankmonk.ai/sitemap.xml
+- Full LLM Overview: https://rankmonk.ai/llms-full.txt
+- Pricing: https://rankmonk.ai/pricing

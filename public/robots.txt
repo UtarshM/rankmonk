@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ByteSpider
+Allow: /
+
+Sitemap: https://rankmonk.ai/sitemap.xml
+# Machine-readable overview for LLMs:
+# https://rankmonk.ai/llms.txt
