@@ -1,6 +1,6 @@
 {
   "name": "rankmonk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "RankMonk.ai — Autonomous AEO & GEO SaaS Platform for the Agentic Web",
   "scripts": {
