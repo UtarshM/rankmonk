@@ -51,10 +51,15 @@ export async function invokeBedrockConverse(
   const client = getBedrockClient();
   if (!client) return null;
 
+  const region = process.env.AWS_REGION || "ap-south-1";
+  const defaultModel = region.startsWith("ap-") 
+    ? "apac.anthropic.claude-3-5-sonnet-20241022-v2:0" 
+    : "anthropic.claude-3-5-sonnet-20241022-v2:0";
+
   const modelId =
     options?.modelId ||
     process.env.AWS_BEDROCK_MODEL_ID ||
-    "anthropic.claude-3-5-sonnet-20241022-v2:0";
+    defaultModel;
 
   try {
     const command = new ConverseCommand({
