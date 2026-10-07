@@ -23,7 +23,7 @@ export default function TrafficPage() {
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-600 dark:text-purple-400 text-xs font-bold mb-3">
               <TrendingUp className="w-3.5 h-3.5" />
-              <span>Sitefire-Grade AI Referral & Attribution</span>
+              <span>Enterprise AI Referral & Attribution</span>
             </div>
             <h1 className="text-3xl font-extrabold tracking-tight">
               AI Traffic Studio & Attribution

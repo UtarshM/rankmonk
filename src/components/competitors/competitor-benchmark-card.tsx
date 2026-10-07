@@ -35,7 +35,7 @@ export function CompetitorBenchmarkCard({ brandDomain, brandName }: CompetitorBe
       hasLlmsTxt: true,
     },
     {
-      competitorDomain: "sitefire.ai",
+      competitorDomain: "industryrival.com",
       visibilityScore: 78,
       citationShare: 41,
       shareOfVoice: 32,
@@ -119,7 +119,7 @@ export function CompetitorBenchmarkCard({ brandDomain, brandName }: CompetitorBe
                 Competitive AI Visibility & Share of Voice
               </h3>
               <span className="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20">
-                Sitefire Benchmarks
+                RNDF™ Market Benchmarks
               </span>
             </div>
             <p className="text-xs text-[var(--muted)]">

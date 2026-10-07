@@ -219,12 +219,12 @@ export default function UnifiedOverviewPage() {
           </div>
         </section>
 
-        {/* Sitefire-Grade Intelligence Extensions */}
+        {/* Autonomous Intelligence Extensions */}
         <section className="space-y-6 pt-4">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-[var(--line)] pb-4">
             <div>
               <div className="text-[11px] font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400">
-                Sitefire-Grade Intelligence Suite
+                Autonomous Intelligence Suite
               </div>
               <h3 className="text-xl font-black text-[var(--ink)] mt-0.5">
                 Advanced Generative Attribution & Market Share
@@ -245,7 +245,7 @@ export default function UnifiedOverviewPage() {
                 </div>
                 <h4 className="text-base font-bold text-[var(--ink)]">Competitor Benchmarking</h4>
                 <p className="text-xs text-[var(--muted)] leading-relaxed">
-                  Head-to-head AI visibility & Share of Voice matrix against Sitefire, Higoodie, and custom rivals across ChatGPT and Perplexity.
+                  Head-to-head AI visibility & Share of Voice matrix against direct rivals and custom market peers across ChatGPT and Perplexity.
                 </p>
               </div>
               <Link

@@ -41,7 +41,7 @@ const DEFAULT_GAPS: ContentGapItem[] = [
   {
     id: "gap-1",
     query: "Best enterprise AEO tools for ChatGPT and Perplexity citations",
-    citedCompetitor: "sitefire.ai",
+    citedCompetitor: "industryrival.com",
     searchEngine: "ChatGPT & Perplexity",
     intent: "Decision",
     opportunityScore: 96,
@@ -59,7 +59,7 @@ const DEFAULT_GAPS: ContentGapItem[] = [
         "H1: Top Enterprise AEO Software Platforms Compared (2026)",
         "H2: What Makes an Answer Engine Optimization Tool Enterprise-Grade?",
         "H3: 11-Test GEO Scoring Framework Breakdown",
-        "H2: RankMonk vs Sitefire.ai: Direct Head-to-Head Comparison",
+        "H2: RankMonk vs Alternative Solutions: Direct Head-to-Head Comparison",
         "H2: How to Configure llms.txt & AI Bot Crawler Directives",
         "H2: Frequently Asked Questions About AEO Tools"
       ],
@@ -242,7 +242,7 @@ ${gap.brief.schemaExample}
             <div className="px-6 py-4 border-b border-[var(--line)] flex items-center justify-between bg-[var(--bg-2)]/50">
               <div className="flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-purple-500" />
-                <h3 className="text-sm font-bold text-[var(--ink)]">Sitefire-Grade Content Brief</h3>
+                <h3 className="text-sm font-bold text-[var(--ink)]">Autonomous Content Brief (RNDF™)</h3>
               </div>
               <button
                 onClick={() => setActiveModalGap(null)}

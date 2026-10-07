@@ -1,152 +1,135 @@
-# RankMonk — AI Search & Answer Engine Optimization (AEO/GEO) Platform
+# RankMonk — Autonomous AI Search & Answer Engine Optimization (AEO/GEO) Platform
 
-> **Sitefire.ai Alternative & Standalone Enterprise SaaS**  
-> Built for independent deployment on Vercel, Docker, or bare metal using **Bun** or **Node.js/npm**.
+[![CI](https://github.com/UtarshM/rankmonk/actions/workflows/ci.yml/badge.svg)](https://github.com/UtarshM/rankmonk/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg)](https://opensource.org/licenses/MIT)
+[![Next.js 16](https://img.shields.io/badge/Next.js-16.2.6-black)](https://nextjs.org/)
+[![TypeScript 5](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
+
+> **Autonomous Closed-Loop AEO/GEO Platform for the Generative Web**  
+> Diagnose generative AI visibility gaps across ChatGPT, Claude, Gemini, and Perplexity — and autonomously ship validated schema, metadata, and answer fixes in one click.
 
 ---
 
-## 🚀 Overview
+## 🚀 Core Pillars
 
-**RankMonk** is a standalone enterprise application designed specifically to audit, optimize, and dominate visibility across modern AI search surfaces — including **ChatGPT (SearchGPT)**, **Anthropic Claude**, **Google Gemini**, **Perplexity AI**, **Microsoft Copilot**, and **xAI Grok**.
+### 1. Autonomous Remediation Engine (ARE™) (`/geo`)
+- **Closed-Loop Execution:** Moving beyond passive audits to active remediation. Convert audit failures into prioritized, page-scoped actions with estimated impact scores.
+- **1-Click Live Deployment:** Lightweight, framework-agnostic client runtime SDK (`/sdk/rankmonk-runtime.js`, <3KB) dynamically injects validated JSON-LD schemas (FAQ, Organization, Article, Product), BLUF answer blocks, freshness badges, and machine directives without full redeploys.
+- **Rollback & Verification Beacons:** Every rule includes instant snapshot rollback and live DOM confirmation beacons with latency and timestamp telemetry.
+- **Universal CMS & Framework Compatibility:** Direct snippet support for vanilla HTML, Next.js, Webflow, Framer, WordPress, and Shopify via Google Tag Manager or theme layout.
 
-As commercial buyers shift from classic ten-blue-links Google search to conversational generative assistants, RankMonk provides the entire Sitefire-grade optimization toolset in a standalone codebase:
+### 2. RankMonk Neural Diagnostic Framework (RNDF™) (`/geo`)
+- **11-Test Weighted Diagnostic:** Tests categorized into T1 (3x weight for high citation impact), T2 (2x weight for semantic clarity), and T3 (1x weight for crawler hygiene).
+- **Dual-Crawl Audit:** Pre-JS raw HTML vs. rendered DOM inspection to detect client-side hydration walls that blind LLM scrapers.
+- **Robots & AI Bot Directives:** Live inspection for `GPTBot`, `ClaudeBot`, `PerplexityBot`, `Google-Extended`, and `ByteSpider`.
+- **`llms.txt` Generator & Validator:** 1-click generation, validation, and download of machine-readable Markdown specifications.
+- **EEAT Trust Graph:** Cross-platform trust verification across 12 authoritative platforms (G2, Reddit, Capterra, LinkedIn, Crunchbase, Trustpilot, etc.).
 
-### 1. 11-Test GEO Diagnostic Engine (`/geo`)
-- **Sitefire.ai Weighted Methodology:** Tests categorized into T1 (3x weight), T2 (2x weight), and T3 (1x weight).
-- **Before vs. After Actionable Code Snippets:** Instant copy-paste code and copy fixes for source citations, numerical statistics, BLUF answer-first paragraphs, FAQPage JSON-LD schemas, and comparison tables.
-- **AI Crawler & Robots.txt Directives:** Live status checks for `GPTBot`, `ClaudeBot`, `PerplexityBot`, `Google-Extended`, and `ByteSpider`.
-- **`llms.txt` Protocol Generator:** 1-click generation, validation, and download of machine-readable specifications.
-- **EEAT & 12-Platform Footprint:** Measures brand trust signals across G2, Reddit, Capterra, LinkedIn, CrunchBase, TrustPilot, X, and YouTube.
+### 3. Multi-Model AEO Intelligence (`/aeo`)
+- **Search-Grounded Query Scans:** Per-prompt, per-engine visibility matrix across ChatGPT, Claude, Gemini, and Perplexity.
+- **Raw Answer Drilldown:** Detailed view of model answers, extracted citation URLs, sentiment ratings, and recommendation position.
+- **4-Step AI Domain Discovery Wizard:** Ingests domain homepages and converts site architecture into high-converting buyer-intent queries (Awareness, Evaluation, Comparison, Decision).
+- **Sector Master Prompts:** 100+ pre-vetted buyer-intent prompts across B2B SaaS, FinTech, E-commerce, Healthcare, Legal, and Manufacturing (Bilingual EN/FR).
 
-### 2. Multi-Model AEO Engine (`/aeo`)
-- **Multi-Model Visibility Matrix:** Real-time query scanning across 6 leading AI models.
-- **4-Step AI Domain Discovery Wizard:** Automated homepage extraction into buyer-intent queries (Awareness, Evaluation, Comparison, Decision).
-- **Citation & Sentiment Distribution:** Tracks which pages and domains are cited as primary evidence and whether recommendations are positive or neutral.
-- **100+ Sector Master Prompts:** Pre-vetted buyer-intent prompts across B2B SaaS, FinTech, E-commerce, Healthcare, Legal, and Manufacturing (Bilingual EN/FR).
+### 4. Competitor Share of Voice (`/competitors`)
+- Head-to-head AI visibility & Share of Voice matrix against direct category peers.
+- Tracks citation share percentage, top prompt wins, and crawler accessibility parity.
 
-### 3. Competitor Benchmarking & Share of Voice (`/competitors`)
-- Head-to-head AI visibility & Share of Voice matrix against Sitefire.ai, Higoodie, and custom rivals.
-- Tracks citation share percentage, top prompt wins, and sentiment ratings across ChatGPT and Perplexity.
-
-### 4. AI Referral Traffic & Attribution Studio (`/traffic`)
+### 5. AI Referral Traffic & Attribution (`/traffic`)
 - GA4-integrated traffic source breakdown from conversational LLM citations (`chatgpt.com`, `perplexity.ai`, `claude.ai`, `gemini.google.com`, `copilot.microsoft.com`).
-- Built-in AI Citation UTM Parameter Builder.
-- Exact GA4 Custom Channel Grouping regex rule: `(chatgpt|openai|perplexity|claude|anthropic|gemini|copilot)`.
+- Built-in Enterprise AI Citation UTM Parameter Generator.
+- Pre-configured GA4 Custom Channel Grouping regex rules.
 
-### 5. Content Gap Studio & 1-Click Brief Generator (`/content-gaps`)
+### 6. Autonomous Content Gap Studio (`/content-gaps`)
 - Detects high-intent buyer queries where competitors win AI citations and your domain is omitted.
-- 1-click markdown brief generator featuring BLUF answers, mandatory statistics, heading outlines, and JSON-LD schemas.
-
-### 6. SaaS Pricing & Subscription Plans (`/pricing`)
-- Transparent tiers: Starter ($49/mo), Growth ($149/mo), and Enterprise ($399/mo) with monthly/annual switch.
+- 1-click Markdown brief generator featuring BLUF answers, mandatory statistics, heading outlines, and JSON-LD schemas.
 
 ---
 
-## ⚡ Quick Start with Bun (Recommended) or npm
+## ⚡ Quick Start
 
-RankMonk fully supports **Bun** for ultra-fast builds and execution:
+RankMonk is a standalone Next.js 16 application.
 
-### Using Bun:
+### Prerequisites
+- Node.js 20+ and npm (or Bun)
+- PostgreSQL database (or Supabase instance)
+
+### Installation
 ```bash
-# From workspace root
-bun run bun:dev:rankmonk         # Start dev server on http://localhost:3000
-bun run bun:build:rankmonk       # Run optimized production build
-bun run bun:typecheck:rankmonk   # Run strict TypeScript validation
+# Clone the repository
+git clone https://github.com/UtarshM/rankmonk.git
+cd rankmonk
 
-# Or navigate directly to apps/rankmonk:
-cd apps/rankmonk
-bun install
-bun run dev                      # Start dev server
-bun run build                    # Production build
-bun run typecheck                # Typecheck
-```
-
-### Using npm:
-```bash
-# From workspace root
-npm run dev:rankmonk             # Start dev server
-npm run build:rankmonk           # Production build
-npm run typecheck:rankmonk       # Typecheck
-
-# Or navigate directly to apps/rankmonk:
-cd apps/rankmonk
+# Install dependencies
 npm install
+
+# Copy environment variables
+cp .env.example .env.local
+
+# Run the development server
 npm run dev
-npm run build
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser.
+
+### Scripts
+- `npm run dev`: Start Next.js development server with Webpack mode.
+- `npm run build`: Production bundle compilation.
+- `npm run start`: Start production server.
+- `npm run typecheck`: Strict TypeScript validation.
+
+---
+
+## 🔌 Deploying the Remediation SDK
+
+To enable 1-click schema and BLUF injection on target websites, insert the RankMonk Runtime SDK into the `<head>` of your site:
+
+```html
+<!-- RankMonk Autonomous Remediation Runtime -->
+<script
+  src="https://rankmonk.vercel.app/sdk/rankmonk-runtime.js"
+  data-project="your-domain.com"
+  async>
+</script>
+```
+
+For Next.js App Router applications (`app/layout.tsx`):
+```tsx
+import Script from "next/script";
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <head>
+        <Script
+          src="https://rankmonk.vercel.app/sdk/rankmonk-runtime.js"
+          data-project="your-domain.com"
+          strategy="afterInteractive"
+        />
+      </head>
+      <body>{children}</body>
+    </html>
+  );
+}
 ```
 
 ---
 
-## 📁 Standalone Directory Structure
+## 🗄️ Database Setup (Supabase / Postgres)
 
-```
-apps/rankmonk/
-├── Dockerfile                     # Production multi-stage Docker build
-├── docker-compose.yml             # Local/production Docker Compose
-├── package.json                   # Standalone package.json
-├── next.config.ts                 # Next.js 16 standalone config (Webpack mode)
-├── tsconfig.json                  # TypeScript path mappings (@/* -> src/*)
-├── postcss.config.mjs             # PostCSS Tailwind v4 configuration
-├── vercel.json                    # Vercel deployment directives
-├── schema.sql                     # Standalone Supabase database schema & RLS policies
-├── .env.example                   # Environment variable template
-└── src/
-    ├── app/
-    │   ├── layout.tsx             # Root layout with RankMonk theme
-    │   ├── globals.css            # Tailwind CSS v4 design tokens and gradients
-    │   ├── page.tsx               # Overview Command Center
-    │   ├── aeo/page.tsx           # Multi-Model AEO Workspace
-    │   ├── geo/page.tsx           # 11-Test GEO Diagnostic Scorecard
-    │   ├── competitors/page.tsx   # Competitor Benchmarking & Share of Voice
-    │   ├── traffic/page.tsx       # AI Referral Traffic & GA4 Attribution
-    │   ├── content-gaps/page.tsx  # Content Gap Studio & 1-Click Briefs
-    │   ├── pricing/page.tsx       # Standalone SaaS Pricing & Plans
-    │   └── api/
-    │       ├── health/route.ts                    # Health check endpoint
-    │       ├── aeo/
-    │       │   ├── discover-topics/route.ts       # OpenRouter AI topic discovery
-    │       │   ├── generate-prompts/route.ts      # Prompt generator
-    │       │   ├── generate-prompts-wizard/route.ts # Categorized wizard prompts
-    │       │   ├── master-prompts/route.ts        # Sector master prompts
-    │       │   └── analyze/route.ts               # Local & AI AEO analysis engine
-    │       └── geo/
-    │           ├── audit/route.ts                 # Live robots.txt, crawlers, and EEAT audit
-    │           ├── scorecard/route.ts             # 11-Test diagnostic scorecard API
-    │           └── generate-llmstxt/route.ts      # llms.txt protocol generator
-    ├── components/
-    │   ├── aeo/                   # AEO workspace, wizard, master prompts, content gaps
-    │   ├── geo/                   # 11-Test scorecard card, EEAT card, crawlers card, llmstxt modal
-    │   ├── competitors/           # Competitor benchmark card & share of voice
-    │   ├── traffic/               # AI traffic tracker & UTM builder
-    │   └── shared/                # App header, footer, providers
-    ├── hooks/                     # Custom React hooks (useProjects, etc.)
-    ├── lib/                       # Utility functions, geo-audit engine, utils
-    ├── server/                    # Shared server utilities
-    └── types/                     # Strict TypeScript interfaces for AEO & GEO
-```
-
----
-
-## 🗄️ Standalone Database Setup
-
-RankMonk includes a dedicated `schema.sql` file designed for Supabase or standard PostgreSQL:
+Execute the included `schema.sql` against your Supabase or PostgreSQL database:
 
 ```bash
-# Run against your Supabase or PostgreSQL instance:
-psql -h your-db-host -U postgres -d postgres -f apps/rankmonk/schema.sql
+psql -h your-db-host -U postgres -d postgres -f schema.sql
 ```
 
-Tables created:
-- `projects`
-- `aeo_prompts`
-- `prompt_scan_runs`
-- `aeo_citations`
-- `aeo_analyses`
-- `aeo_content_gaps`
-- `geo_audits`
-- `geo_scores`
-
-All tables include automated timestamps, indexes on `(project_id, created_at)`, and Row Level Security (RLS) policies.
+Tables included:
+- `projects`: Domain configuration, crawler states, and verification tokens.
+- `aeo_prompts`: Tracked generative search prompts by intent category.
+- `prompt_scan_runs`: Historical scan runs per engine with raw response payloads.
+- `aeo_citations`: Extracted citations, domains, and sentiment scores.
+- `geo_audits`: 11-test diagnostic scores, crawler headers, and `llms.txt` state.
+- `remediation_rules`: Active DOM injection payloads, rollback snapshots, and deployment history.
 
 ---
 
@@ -155,17 +138,32 @@ All tables include automated timestamps, indexes on `(project_id, created_at)`, 
 RankMonk is fully containerized and production-ready:
 
 ```bash
-cd apps/rankmonk
 docker compose up -d --build
 ```
+
 Access the application at `http://localhost:3000`.
 
 ---
 
 ## 🌐 Vercel 1-Click Deployment
 
-RankMonk is configured with `vercel.json` for seamless deployment:
-- **Framework Preset:** Next.js
-- **Build Command:** `next build --webpack`
-- **Output Directory:** `.next`
-- Set root directory in Vercel to `apps/rankmonk`.
+RankMonk is optimized for Vercel out of the box (`vercel.json`):
+1. Connect your repository to Vercel.
+2. Ensure framework is detected as **Next.js**.
+3. Supply required environment variables from `.env.example`.
+4. Deploy with zero configuration.
+
+---
+
+## 🔒 Security & SSRF Protection
+
+All network auditing logic operates through `src/lib/security/ssrf.ts` with strict enterprise safeguards:
+- **Private Subnet Filtering:** Blocks loopback (`127.0.0.1`), private RFC 1918 subnets (`10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`), and AWS/GCP cloud metadata services (`169.254.169.254`).
+- **Port Whitelisting:** Enforces outgoing connections strictly on ports 80 and 443.
+- **Timeouts & Payloads:** Max 7,500ms timeout and 2MB payload cap.
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).

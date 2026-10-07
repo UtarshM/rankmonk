@@ -23,7 +23,7 @@ export default function ContentGapsPage() {
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-600 dark:text-purple-400 text-xs font-bold mb-3">
               <Target className="w-3.5 h-3.5" />
-              <span>Sitefire-Grade Content Gap Engine</span>
+              <span>Autonomous Content Gap Engine</span>
             </div>
             <h1 className="text-3xl font-extrabold tracking-tight">
               AI Citation Content Gap Studio

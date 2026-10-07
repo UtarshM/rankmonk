@@ -225,9 +225,9 @@ export default function PricingPage() {
         {/* Feature Comparison Highlights */}
         <div className="rounded-3xl border border-[var(--line)] bg-[var(--panel)] p-8 shadow-sm space-y-6">
           <div className="text-center max-w-xl mx-auto space-y-2">
-            <h2 className="text-2xl font-bold">Why SaaS Teams Choose RankMonk over Sitefire</h2>
+            <h2 className="text-2xl font-bold">Why SaaS Teams Choose RankMonk for Autonomous GEO</h2>
             <p className="text-xs text-[var(--muted)]">
-              Full-stack AI Answer Engine Optimization and Generative Diagnostics in one unified platform.
+              Full-stack AI Answer Engine Optimization and Autonomous Generative Diagnostics in one unified platform.
             </p>
           </div>
 
@@ -236,9 +236,9 @@ export default function PricingPage() {
               <div className="w-9 h-9 rounded-xl bg-purple-500/10 text-purple-600 flex items-center justify-center font-bold">
                 11
               </div>
-              <h3 className="text-sm font-bold text-[var(--ink)]">11-Test Weighted Diagnostic</h3>
+              <h3 className="text-sm font-bold text-[var(--ink)]">11-Test Neural Diagnostic (RNDF™)</h3>
               <p className="text-xs text-[var(--muted)]">
-                Sitefire-grade T1 (3x), T2 (2x), and T3 (1x) weighted scoring with copy-pasteable Before/After remediation code.
+                RankMonk Neural Diagnostic Framework with T1 (3x), T2 (2x), and T3 (1x) weighted scoring and 1-click live runtime deployment.
               </p>
             </div>
 

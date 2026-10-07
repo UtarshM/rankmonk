@@ -98,8 +98,8 @@ const TOP_CITED_PAGES = [
     citationsCount: 62,
   },
   {
-    path: "/compare/sitefire-vs-rankmonk",
-    title: "RankMonk vs Sitefire.ai — Generative Engine Audit Review",
+    path: "/compare/top-aeo-geo-tools",
+    title: "Top AEO & GEO Platforms 2026 — Comprehensive Buyer Guide",
     sessions: 2890,
     primaryEngine: "ChatGPT",
     citationsCount: 51,
@@ -315,7 +315,7 @@ export function AiTrafficTracker({ domain = "rankmonk.ai" }: { domain?: string }
           </div>
         </div>
 
-        {/* Sitefire-Grade AI Citation UTM Builder */}
+        {/* Enterprise AI Citation UTM Parameter Generator */}
         <div className="rounded-2xl border border-[var(--line)] bg-[var(--panel)] p-6 shadow-sm space-y-4">
           <div className="flex items-center justify-between">
             <h3 className="text-sm font-bold flex items-center gap-2">

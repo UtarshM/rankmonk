@@ -53,7 +53,7 @@ export function parseRobotsTxtForAi(robotsContent: string) {
 }
 
 /**
- * 11-Test GEO Content Diagnostic Engine (Sitefire.ai methodology)
+ * 11-Test GEO Content Diagnostic Engine (RankMonk Neural Diagnostic Framework - RNDF™)
  * Includes T1 (3x weight), T2 (2x weight), and T3 (1x weight) tiers with Before vs After code & copy recommendations.
  */
 export function buildDefaultGeoScorecard(domain: string, checklist: Partial<GeoChecklist> = {}): GeoScorecardTest[] {

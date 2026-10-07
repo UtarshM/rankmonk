@@ -3,6 +3,7 @@ import { z } from "zod";
 import { readJson } from "@/server/api";
 import { cleanDomain } from "@/lib/utils";
 import { normalizeScanUrl, parseRobotsTxtForAi } from "@/lib/geo/geo-audit";
+import { validateUrlForSsrf, safeFetch } from "@/lib/security/ssrf";
 import type { GeoAnalysisResult } from "@/types/geo";
 
 export const runtime = "nodejs";
@@ -21,22 +22,22 @@ export async function POST(request: NextRequest) {
     }
 
     const targetUrl = normalizeScanUrl(parsed.data.url);
+    const ssrfCheck = validateUrlForSsrf(targetUrl);
+    if (!ssrfCheck.isValid) {
+      return NextResponse.json({ error: ssrfCheck.error || "Blocked URL" }, { status: 400 });
+    }
+
     const domain = cleanDomain(targetUrl);
 
     let sslValid = true;
     let hasLlmsTxt = false;
     let robotsContent = "";
 
-    // 1. Check robots.txt
-    try {
-      const robotsRes = await fetch(`https://${domain}/robots.txt`, {
-        signal: AbortSignal.timeout(4000),
-        headers: { "User-Agent": "RankMonk-GEO-Auditor/1.0" },
-      });
-      if (robotsRes.ok) {
-        robotsContent = await robotsRes.text();
-      }
-    } catch {}
+    // 1. Safe Check robots.txt with SSRF guard
+    const robotsFetch = await safeFetch(`https://${domain}/robots.txt`, { timeoutMs: 4000 });
+    if (robotsFetch.ok && robotsFetch.text) {
+      robotsContent = robotsFetch.text;
+    }
 
     const aiCrawlers = robotsContent ? parseRobotsTxtForAi(robotsContent) : {
       gptbot: true,
@@ -46,19 +47,11 @@ export async function POST(request: NextRequest) {
       bytespider: true,
     };
 
-    // 2. Check llms.txt
-    try {
-      const llmsRes = await fetch(`https://${domain}/llms.txt`, {
-        signal: AbortSignal.timeout(4000),
-        headers: { "User-Agent": "RankMonk-GEO-Auditor/1.0" },
-      });
-      if (llmsRes.ok) {
-        const text = await llmsRes.text();
-        if (text && text.length > 20) {
-          hasLlmsTxt = true;
-        }
-      }
-    } catch {}
+    // 2. Safe Check llms.txt with SSRF guard
+    const llmsFetch = await safeFetch(`https://${domain}/llms.txt`, { timeoutMs: 4000 });
+    if (llmsFetch.ok && llmsFetch.text && llmsFetch.text.length > 20) {
+      hasLlmsTxt = true;
+    }
 
     // Deterministic simulation based on domain name
     let hash = 0;

@@ -88,11 +88,11 @@ export function GeoScorecardCard({ tests, overallScore, domain }: GeoScorecardCa
                   11-Test GEO Content Diagnostic Engine
                 </h3>
                 <span className="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20">
-                  Sitefire.ai Methodology
+                  RankMonk RNDF™ Framework
                 </span>
               </div>
               <p className="text-xs text-[var(--muted)]">
-                Evaluates factual density, citation weights, answer-first structures, and machine readability for {domain}
+                RankMonk Neural Diagnostic Framework evaluating citation density, answer-first structures, and machine readability for {domain}
               </p>
             </div>
           </div>
@@ -227,7 +227,7 @@ export function GeoScorecardCard({ tests, overallScore, domain }: GeoScorecardCa
                       <div className="flex items-center justify-between text-[11px] font-bold uppercase tracking-wider text-[var(--muted)]">
                         <span className="flex items-center gap-1.5">
                           <Code2 className="w-3.5 h-3.5 text-purple-500" />
-                          Sitefire Actionable Transformation Example
+                          RankMonk Actionable Transformation Example
                         </span>
                         <div className="flex items-center gap-2">
                           <button
@@ -261,10 +261,10 @@ export function GeoScorecardCard({ tests, overallScore, domain }: GeoScorecardCa
                           </pre>
                         </div>
 
-                        {/* After (Sitefire-Optimized) */}
+                        {/* After (RankMonk-Optimized) */}
                         <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/5 p-3 space-y-1.5">
                           <div className="text-[10px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 flex items-center gap-1">
-                            <CheckCircle2 className="w-3 h-3" /> After (High Citation Weight)
+                            <CheckCircle2 className="w-3 h-3" /> After (RankMonk Optimized)
                           </div>
                           <pre className="font-mono text-[11px] text-[var(--ink-2)] whitespace-pre-wrap overflow-x-auto p-2 rounded bg-[var(--panel)] border border-emerald-500/15 font-medium">
                             {t.afterCode}

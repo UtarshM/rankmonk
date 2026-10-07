@@ -36,13 +36,13 @@ export default function CompetitorsPage() {
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-600 dark:text-purple-400 text-xs font-bold mb-3">
               <Users className="w-3.5 h-3.5" />
-              <span>Sitefire-Grade Competitor Benchmarking</span>
+              <span>Multi-Model Competitor Intelligence</span>
             </div>
             <h1 className="text-3xl font-extrabold tracking-tight">
               AI Share of Voice & Competitor Intelligence
             </h1>
             <p className="text-sm text-[var(--muted)] mt-1.5 max-w-2xl">
-              Track how often your brand is cited vs competitors like Sitefire, Higoodie, and industry rivals across ChatGPT, Claude, Perplexity, and Gemini.
+              Track how often your brand is cited vs category rivals across ChatGPT, Claude, Perplexity, and Gemini.
             </p>
           </div>
 
@@ -106,20 +106,20 @@ export default function CompetitorsPage() {
                 <span className="text-xs font-bold text-rose-600 dark:text-rose-400 flex items-center gap-1.5 uppercase tracking-wider">
                   <ShieldAlert className="w-4 h-4" /> At-Risk Queries (Competitor Dominance)
                 </span>
-                <span className="text-[11px] text-[var(--muted)]">Sitefire / Higoodie</span>
+                <span className="text-[11px] text-[var(--muted)]">Category Rivals</span>
               </div>
               <ul className="text-xs space-y-2">
                 <li className="p-2 rounded-lg bg-[var(--panel)] border border-[var(--line)] flex items-center justify-between">
                   <span className="font-medium text-[var(--ink)]">"Enterprise generative engine audit scorecard"</span>
-                  <span className="font-bold text-rose-500">Sitefire Cited</span>
+                  <span className="font-bold text-rose-500">Rival #1 Cited</span>
                 </li>
                 <li className="p-2 rounded-lg bg-[var(--panel)] border border-[var(--line)] flex items-center justify-between">
                   <span className="font-medium text-[var(--ink)]">"llms.txt generator automated schema validation"</span>
-                  <span className="font-bold text-rose-500">Higoodie Cited</span>
+                  <span className="font-bold text-rose-500">Rival #2 Cited</span>
                 </li>
                 <li className="p-2 rounded-lg bg-[var(--panel)] border border-[var(--line)] flex items-center justify-between">
                   <span className="font-medium text-[var(--ink)]">"Best AI bot crawler directives robots.txt"</span>
-                  <span className="font-bold text-rose-500">Scrunch Cited</span>
+                  <span className="font-bold text-rose-500">Rival #3 Cited</span>
                 </li>
               </ul>
             </div>

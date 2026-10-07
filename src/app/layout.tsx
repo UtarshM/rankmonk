@@ -3,7 +3,7 @@ import "./globals.css";
 import { Providers } from "@/components/shared/providers";
 
 export const metadata: Metadata = {
-  title: "RankMonk — AI Search & Answer Engine Optimization (AEO/GEO) Platform | Sitefire Alternative",
+  title: "RankMonk — Autonomous AI Search & Answer Engine Optimization (AEO/GEO) Platform",
   description: "Enterprise Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) SaaS. Track visibility across ChatGPT, Perplexity, Claude, Gemini, analyze 11-test GEO readiness, and benchmark competitors.",
 };
 
