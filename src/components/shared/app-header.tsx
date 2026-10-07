@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useTheme } from "next-themes";
 import { useProjects } from "@/hooks/useProjects";
 import { useAuth } from "@/hooks/useAuth";
 import { 
@@ -10,8 +9,6 @@ import {
   Globe, 
   Cpu, 
   ShieldCheck, 
-  Sun, 
-  Moon, 
   ChevronDown, 
   Plus, 
   Activity,
@@ -39,7 +36,6 @@ interface AppHeaderProps {
 export function AppHeader({ onOpenWizard, onOpenLlmsModal }: AppHeaderProps) {
   const router = useRouter();
   const pathname = usePathname();
-  const { theme, setTheme } = useTheme();
   const { activeProject, projects, selectActiveProject } = useProjects();
   const { user, isAuthenticated, logout } = useAuth();
   const [projectDropdownOpen, setProjectDropdownOpen] = useState(false);
@@ -260,17 +256,6 @@ export function AppHeader({ onOpenWizard, onOpenLlmsModal }: AppHeaderProps) {
                 </Link>
               </div>
             )}
-
-            {/* Theme Toggle */}
-            <button
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="p-2 rounded-xl border border-[var(--line)] bg-[var(--panel)] hover:bg-[var(--bg-2)] text-[var(--muted)] hover:text-[var(--ink)] transition-colors"
-              title="Toggle theme"
-            >
-              <Sun className="w-4 h-4 hidden dark:block text-amber-400" />
-              <Moon className="w-4 h-4 block dark:hidden text-slate-600" />
-            </button>
-
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

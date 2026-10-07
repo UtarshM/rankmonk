@@ -6,34 +6,34 @@
 @source "../app/**/*.{ts,tsx,js,jsx}";
 
 :root {
-  --bg: #FBF9F4;
-  --bg-2: #F4F1EA;
-  --panel: #ffffff;
-  --line: #e2e1da;
-  --ink: #1A1714;
-  --ink-2: #3E3844;
-  --muted: #5c5764;
-  --panel-2: #F9F9FB;
-  --line-2: #D1D5DB;
-  --primary: #9025F2;
-  --primary-2: #7a17d6;
-  --primary-soft: #f3e8ff;
-  --primary-tint: #faf5ff;
-  --pink: #ec4899;
-  --yellow: #f5b500;
-  --green: #22c55e;
-  --grad: linear-gradient(90deg, #9025F2 0%, #b260ff 60%, #ec4899 100%);
-  --grad-soft: linear-gradient(135deg, rgba(144,37,242,.08) 0%, rgba(236,72,153,.08) 100%);
+  --bg: #FFFFFF;
+  --bg-2: #F8FAFC;
+  --panel: #FFFFFF;
+  --line: #E2E8F0;
+  --ink: #0F172A;
+  --ink-2: #334155;
+  --muted: #64748B;
+  --panel-2: #F1F5F9;
+  --line-2: #CBD5E1;
+  --primary: #7C3AED;
+  --primary-2: #6D28D9;
+  --primary-soft: #EDE9FE;
+  --primary-tint: #F5F3FF;
+  --pink: #EC4899;
+  --yellow: #F59E0B;
+  --green: #10B981;
+  --grad: linear-gradient(90deg, #7C3AED 0%, #A855F7 60%, #EC4899 100%);
+  --grad-soft: linear-gradient(135deg, rgba(124,58,237,.06) 0%, rgba(236,72,153,.06) 100%);
 }
 
 .dark {
-  --bg: #141017;
-  --bg-2: #1A1620;
-  --panel: #1E1828;
-  --line: #322A40;
-  --ink: #ffffff;
-  --ink-2: #e2e8f0;
-  --muted: #A79FB0;
+  --bg: #FFFFFF;
+  --bg-2: #F8FAFC;
+  --panel: #FFFFFF;
+  --line: #E2E8F0;
+  --ink: #0F172A;
+  --ink-2: #334155;
+  --muted: #64748B;
 }
 
 * {
