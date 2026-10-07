@@ -166,6 +166,7 @@ export function AppHeader({ onOpenWizard, onOpenLlmsModal }: AppHeaderProps) {
                 </>
               )}
             </div>
+          )}
 
             {/* llms.txt quick action (Only when authenticated) */}
             {isAuthenticated && onOpenLlmsModal && (
