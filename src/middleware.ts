@@ -31,7 +31,16 @@ export function middleware(request: NextRequest) {
     }
   }
 
-  return NextResponse.next();
+  const response = NextResponse.next();
+
+  // Edge AI Bot Crawler Telemetry Detection
+  const userAgent = request.headers.get("user-agent") || "";
+  const aiBotMatch = userAgent.match(/(GPTBot|ClaudeBot|PerplexityBot|Google-Extended|ByteSpider|Amazonbot)/i);
+  if (aiBotMatch) {
+    response.headers.set("x-rankmonk-ai-bot", aiBotMatch[0]);
+  }
+
+  return response;
 }
 
 export const config = {
