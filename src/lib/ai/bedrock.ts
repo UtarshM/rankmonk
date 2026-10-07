@@ -48,9 +48,6 @@ export async function invokeBedrockConverse(
   prompt: string,
   options?: AiInferenceOptions
 ): Promise<string | null> {
-  const client = getBedrockClient();
-  if (!client) return null;
-
   const region = process.env.AWS_REGION || "ap-south-1";
   const defaultModel = region.startsWith("ap-") 
     ? "apac.anthropic.claude-3-5-sonnet-20241022-v2:0" 
@@ -60,6 +57,57 @@ export async function invokeBedrockConverse(
     options?.modelId ||
     process.env.AWS_BEDROCK_MODEL_ID ||
     defaultModel;
+
+  // 1. Direct Bearer Token / Bedrock API Key Support
+  const bearerToken = process.env.AWS_BEARER_TOKEN_BEDROCK || process.env.AWS_BEDROCK_API_KEY;
+  if (bearerToken) {
+    try {
+      const endpoint = `https://bedrock-runtime.${region}.amazonaws.com/model/${encodeURIComponent(modelId)}/converse`;
+      const authHeader = bearerToken.startsWith("Bearer ") ? bearerToken : `Bearer ${bearerToken}`;
+      const payload: any = {
+        messages: [
+          {
+            role: "user",
+            content: [{ text: prompt }],
+          },
+        ],
+        inferenceConfig: {
+          maxTokens: options?.maxTokens ?? 1500,
+          temperature: options?.temperature ?? 0.2,
+        },
+      };
+      if (options?.systemPrompt) {
+        payload.system = [{ text: options.systemPrompt }];
+      }
+
+      const res = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          Authorization: authHeader,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (res.ok) {
+        const json = await res.json();
+        const content = json?.output?.message?.content;
+        if (Array.isArray(content) && content.length > 0) {
+          const textBlock = content.find((c: any) => "text" in c && typeof c.text === "string");
+          if (textBlock?.text) return textBlock.text;
+        }
+      } else {
+        const errText = await res.text();
+        console.warn(`[AWS Bedrock Bearer Token] HTTP ${res.status}:`, errText);
+      }
+    } catch (e: any) {
+      console.warn("[AWS Bedrock Bearer Token] Fetch error:", e?.message || e);
+    }
+  }
+
+  // 2. AWS SDK Client Fallback (IAM / Access Keys)
+  const client = getBedrockClient();
+  if (!client) return null;
 
   try {
     const command = new ConverseCommand({
