@@ -54,9 +54,9 @@ export function CrawlerStatusCard({ crawlers, domain }: CrawlerStatusCardProps) 
 
   return (
     <div className="rounded-2xl border border-[var(--line)] bg-[var(--panel)] p-6 shadow-sm space-y-5 text-[var(--ink)]">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-blue-600/20">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-blue-600/20 shrink-0">
             <Bot className="w-5 h-5" />
           </div>
           <div>
@@ -73,7 +73,7 @@ export function CrawlerStatusCard({ crawlers, domain }: CrawlerStatusCardProps) 
           href={`https://${domain}/robots.txt`}
           target="_blank"
           rel="noreferrer"
-          className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-[var(--line)] bg-[var(--bg-2)] hover:bg-[var(--line)] text-xs font-semibold text-[var(--ink)] transition-colors"
+          className="self-start sm:self-auto flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-[var(--line)] bg-[var(--bg-2)] hover:bg-[var(--line)] text-xs font-semibold text-[var(--ink)] transition-colors"
         >
           <span>View robots.txt</span>
           <ExternalLink className="w-3 h-3 text-[var(--muted)]" />

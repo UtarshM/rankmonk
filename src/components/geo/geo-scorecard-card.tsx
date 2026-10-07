@@ -111,11 +111,11 @@ export function GeoScorecardCard({ tests, overallScore, domain }: GeoScorecardCa
         </div>
 
         {/* Status Metrics Bar */}
-        <div className="grid grid-cols-3 gap-3 mt-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 mt-6">
           <div className="p-3 rounded-xl bg-emerald-500/5 border border-emerald-500/20 flex items-center gap-2.5">
             <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
             <div>
-              <div className="text-xs font-bold text-emerald-600 dark:text-emerald-400">{passedCount} Passed</div>
+              <div className="text-xs font-bold text-emerald-600">{passedCount} Passed</div>
               <div className="text-[10px] text-[var(--muted)]">Verified AI signals</div>
             </div>
           </div>
@@ -123,7 +123,7 @@ export function GeoScorecardCard({ tests, overallScore, domain }: GeoScorecardCa
           <div className="p-3 rounded-xl bg-amber-500/5 border border-amber-500/20 flex items-center gap-2.5">
             <AlertCircle className="w-4 h-4 text-amber-500 shrink-0" />
             <div>
-              <div className="text-xs font-bold text-amber-600 dark:text-amber-400">{warningCount} Warnings</div>
+              <div className="text-xs font-bold text-amber-600">{warningCount} Warnings</div>
               <div className="text-[10px] text-[var(--muted)]">Needs optimization</div>
             </div>
           </div>
@@ -131,7 +131,7 @@ export function GeoScorecardCard({ tests, overallScore, domain }: GeoScorecardCa
           <div className="p-3 rounded-xl bg-rose-500/5 border border-rose-500/20 flex items-center gap-2.5">
             <XCircle className="w-4 h-4 text-rose-500 shrink-0" />
             <div>
-              <div className="text-xs font-bold text-rose-600 dark:text-rose-400">{failedCount} Failed</div>
+              <div className="text-xs font-bold text-rose-600">{failedCount} Failed</div>
               <div className="text-[10px] text-[var(--muted)]">Action required</div>
             </div>
           </div>
@@ -176,9 +176,9 @@ export function GeoScorecardCard({ tests, overallScore, domain }: GeoScorecardCa
                     <XCircle className="w-4 h-4 text-rose-500 shrink-0" />
                   )}
                   <div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
                       <span className="font-bold text-xs text-[var(--ink)]">{t.title}</span>
-                      <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20">
+                      <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-purple-500/10 text-purple-600 border border-purple-500/20">
                         {t.weight}
                       </span>
                       <span className="text-[10px] font-semibold px-2 py-0.5 rounded bg-[var(--bg-2)] text-[var(--muted)]">
@@ -204,17 +204,17 @@ export function GeoScorecardCard({ tests, overallScore, domain }: GeoScorecardCa
 
               {/* Expanded Remediation Drawer with Before vs After Comparison */}
               {isExpanded && (
-                <div className="px-6 pb-6 pt-2 bg-[var(--bg-2)]/30 space-y-4 text-xs border-t border-[var(--line)]/50">
+                <div className="px-4 sm:px-6 pb-6 pt-2 bg-[var(--bg-2)]/30 space-y-4 text-xs border-t border-[var(--line)]/50">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     <div className="p-3.5 rounded-xl bg-[var(--panel)] border border-[var(--line)] space-y-1">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-amber-600">
                         AI Impact Factor
                       </span>
                       <p className="text-[11px] text-[var(--ink-2)] leading-relaxed">{t.impact}</p>
                     </div>
 
                     <div className="p-3.5 rounded-xl bg-indigo-500/5 border border-indigo-500/20 space-y-1">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 flex items-center gap-1">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-indigo-600 flex items-center gap-1">
                         <Wrench className="w-3 h-3" /> Recommended Remediation
                       </span>
                       <p className="text-[11px] text-[var(--ink-2)] leading-relaxed font-medium">{t.fix}</p>
@@ -224,12 +224,12 @@ export function GeoScorecardCard({ tests, overallScore, domain }: GeoScorecardCa
                   {/* Before vs After Code/Content Diff Block */}
                   {(t.beforeCode || t.afterCode) && (
                     <div className="space-y-2 pt-1">
-                      <div className="flex items-center justify-between text-[11px] font-bold uppercase tracking-wider text-[var(--muted)]">
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-[11px] font-bold uppercase tracking-wider text-[var(--muted)]">
                         <span className="flex items-center gap-1.5">
                           <Code2 className="w-3.5 h-3.5 text-purple-500" />
                           RankMonk Actionable Transformation Example
                         </span>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 self-start sm:self-auto">
                           <button
                             onClick={() => handleDeployRule(t.id, t.title)}
                             disabled={deployingId === t.id}
@@ -241,7 +241,7 @@ export function GeoScorecardCard({ tests, overallScore, domain }: GeoScorecardCa
                           {t.afterCode && (
                             <button
                               onClick={() => handleCopyCode(t.afterCode!, t.id)}
-                              className="flex items-center gap-1 text-purple-600 dark:text-purple-400 hover:underline capitalize"
+                              className="flex items-center gap-1 text-purple-600 hover:underline capitalize"
                             >
                               {copiedId === t.id ? <Check className="w-3 h-3 text-emerald-500" /> : <Copy className="w-3 h-3" />}
                               <span>{copiedId === t.id ? "Copied" : "Copy Code"}</span>

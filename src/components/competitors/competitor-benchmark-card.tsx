@@ -139,11 +139,11 @@ export function CompetitorBenchmarkCard({ brandDomain, brandName }: CompetitorBe
 
       {/* Add Competitor Drawer */}
       {isAdding && (
-        <div className="mx-6 p-4 rounded-xl border border-purple-500/30 bg-purple-500/5 space-y-2 animate-in fade-in">
-          <span className="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider">
+        <div className="mx-4 sm:mx-6 p-4 rounded-xl border border-purple-500/30 bg-purple-500/5 space-y-2 animate-in fade-in">
+          <span className="text-xs font-bold text-purple-600 uppercase tracking-wider">
             Add Competitor Domain to AI Benchmark
           </span>
-          <div className="flex gap-2">
+          <div className="flex flex-col sm:flex-row gap-2">
             <input
               type="text"
               placeholder="e.g. competitor.com"
@@ -153,9 +153,9 @@ export function CompetitorBenchmarkCard({ brandDomain, brandName }: CompetitorBe
             />
             <button
               onClick={handleAddCompetitor}
-              className="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition-all"
+              className="w-full sm:w-auto px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition-all"
             >
-              Add
+              Add Competitor
             </button>
           </div>
         </div>

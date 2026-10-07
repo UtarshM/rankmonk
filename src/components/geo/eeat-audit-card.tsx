@@ -175,38 +175,38 @@ export function EeatAuditCard({ analysis }: EeatAuditCardProps) {
               </div>
 
               {isOpen && (
-                <div className="p-6 border-t border-[var(--line)] bg-[var(--bg-2)]/20 space-y-4 text-xs">
+                <div className="p-4 sm:p-6 border-t border-[var(--line)] bg-[var(--bg-2)]/20 space-y-4 text-xs">
                   {/* Sub-tabs */}
-                  <div className="flex items-center gap-2 border-b border-[var(--line)] pb-3">
+                  <div className="flex items-center gap-2 border-b border-[var(--line)] pb-3 overflow-x-auto no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0">
                     <button
                       onClick={() => setTab(key, "summary")}
-                      className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                      className={`shrink-0 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                         currentTab === "summary"
                           ? "bg-purple-600 text-white font-bold shadow-sm"
                           : "text-[var(--muted)] hover:text-[var(--ink)]"
                       }`}
                     >
-                      Summary & Action Items ({cat.improve.length})
+                      Summary ({cat.improve.length})
                     </button>
                     <button
                       onClick={() => setTab(key, "issues")}
-                      className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                      className={`shrink-0 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                         currentTab === "issues"
                           ? "bg-purple-600 text-white font-bold shadow-sm"
                           : "text-[var(--muted)] hover:text-[var(--ink)]"
                       }`}
                     >
-                      Missing Signals ({cat.missing.length})
+                      Missing ({cat.missing.length})
                     </button>
                     <button
                       onClick={() => setTab(key, "passed")}
-                      className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                      className={`shrink-0 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                         currentTab === "passed"
                           ? "bg-purple-600 text-white font-bold shadow-sm"
                           : "text-[var(--muted)] hover:text-[var(--ink)]"
                       }`}
                     >
-                      Verified Passed ({cat.working.length})
+                      Verified ({cat.working.length})
                     </button>
                   </div>
 

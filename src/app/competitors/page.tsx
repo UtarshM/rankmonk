@@ -86,40 +86,40 @@ export default function CompetitorsPage() {
                 <span className="text-[11px] text-[var(--muted)]">ChatGPT & Perplexity</span>
               </div>
               <ul className="text-xs space-y-2">
-                <li className="p-2 rounded-lg bg-[var(--panel)] border border-[var(--line)] flex items-center justify-between">
+                <li className="p-2.5 rounded-lg bg-[var(--panel)] border border-[var(--line)] flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-2">
                   <span className="font-medium text-[var(--ink)]">"Best AI search optimization platform for SaaS"</span>
-                  <span className="font-bold text-emerald-600">Rank #1 Citation</span>
+                  <span className="font-bold text-emerald-600 shrink-0">Rank #1 Citation</span>
                 </li>
-                <li className="p-2 rounded-lg bg-[var(--panel)] border border-[var(--line)] flex items-center justify-between">
+                <li className="p-2.5 rounded-lg bg-[var(--panel)] border border-[var(--line)] flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-2">
                   <span className="font-medium text-[var(--ink)]">"How to optimize website for Perplexity citation"</span>
-                  <span className="font-bold text-emerald-600">Rank #1 Citation</span>
+                  <span className="font-bold text-emerald-600 shrink-0">Rank #1 Citation</span>
                 </li>
-                <li className="p-2 rounded-lg bg-[var(--panel)] border border-[var(--line)] flex items-center justify-between">
+                <li className="p-2.5 rounded-lg bg-[var(--panel)] border border-[var(--line)] flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-2">
                   <span className="font-medium text-[var(--ink)]">"GEO vs AEO tools comparison 2026"</span>
-                  <span className="font-bold text-emerald-600">Rank #2 Citation</span>
+                  <span className="font-bold text-emerald-600 shrink-0">Rank #2 Citation</span>
                 </li>
               </ul>
             </div>
 
             <div className="p-4 rounded-xl border border-rose-500/20 bg-rose-500/5 space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-bold text-rose-600 dark:text-rose-400 flex items-center gap-1.5 uppercase tracking-wider">
+                <span className="text-xs font-bold text-rose-600 flex items-center gap-1.5 uppercase tracking-wider">
                   <ShieldAlert className="w-4 h-4" /> At-Risk Queries (Competitor Dominance)
                 </span>
                 <span className="text-[11px] text-[var(--muted)]">Category Rivals</span>
               </div>
               <ul className="text-xs space-y-2">
-                <li className="p-2 rounded-lg bg-[var(--panel)] border border-[var(--line)] flex items-center justify-between">
+                <li className="p-2.5 rounded-lg bg-[var(--panel)] border border-[var(--line)] flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-2">
                   <span className="font-medium text-[var(--ink)]">"Enterprise generative engine audit scorecard"</span>
-                  <span className="font-bold text-rose-500">Rival #1 Cited</span>
+                  <span className="font-bold text-rose-500 shrink-0">Rival #1 Cited</span>
                 </li>
-                <li className="p-2 rounded-lg bg-[var(--panel)] border border-[var(--line)] flex items-center justify-between">
+                <li className="p-2.5 rounded-lg bg-[var(--panel)] border border-[var(--line)] flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-2">
                   <span className="font-medium text-[var(--ink)]">"llms.txt generator automated schema validation"</span>
-                  <span className="font-bold text-rose-500">Rival #2 Cited</span>
+                  <span className="font-bold text-rose-500 shrink-0">Rival #2 Cited</span>
                 </li>
-                <li className="p-2 rounded-lg bg-[var(--panel)] border border-[var(--line)] flex items-center justify-between">
+                <li className="p-2.5 rounded-lg bg-[var(--panel)] border border-[var(--line)] flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-2">
                   <span className="font-medium text-[var(--ink)]">"Best AI bot crawler directives robots.txt"</span>
-                  <span className="font-bold text-rose-500">Rival #3 Cited</span>
+                  <span className="font-bold text-rose-500 shrink-0">Rival #3 Cited</span>
                 </li>
               </ul>
             </div>

@@ -215,30 +215,30 @@ export function AeoWorkspace() {
           </div>
 
           {/* Quick Metrics Badge */}
-          <div className="flex items-center gap-4 bg-[var(--panel)] border border-[var(--line)] p-4 rounded-2xl shadow-sm">
-            <div className="text-center px-2">
-              <div className="text-2xl font-black text-purple-600 dark:text-purple-400">
+          <div className="w-full lg:w-auto flex items-center justify-around sm:justify-start gap-2 sm:gap-4 bg-[var(--panel)] border border-[var(--line)] p-3 sm:p-4 rounded-2xl shadow-sm">
+            <div className="text-center px-1 sm:px-2">
+              <div className="text-xl sm:text-2xl font-black text-purple-600 dark:text-purple-400">
                 {citationSharePct}%
               </div>
-              <div className="text-[10px] font-bold uppercase tracking-wider text-[var(--muted)] mt-0.5">
+              <div className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-[var(--muted)] mt-0.5">
                 AI Citation Share
               </div>
             </div>
-            <div className="h-10 w-px bg-[var(--line)]" />
-            <div className="text-center px-2">
-              <div className="text-2xl font-black text-emerald-600 dark:text-emerald-400">
+            <div className="h-8 sm:h-10 w-px bg-[var(--line)]" />
+            <div className="text-center px-1 sm:px-2">
+              <div className="text-xl sm:text-2xl font-black text-emerald-600 dark:text-emerald-400">
                 {sentimentPct}%
               </div>
-              <div className="text-[10px] font-bold uppercase tracking-wider text-[var(--muted)] mt-0.5">
+              <div className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-[var(--muted)] mt-0.5">
                 Positive Sentiment
               </div>
             </div>
-            <div className="h-10 w-px bg-[var(--line)]" />
-            <div className="text-center px-2">
-              <div className="text-2xl font-black text-indigo-600 dark:text-indigo-400">
+            <div className="h-8 sm:h-10 w-px bg-[var(--line)]" />
+            <div className="text-center px-1 sm:px-2">
+              <div className="text-xl sm:text-2xl font-black text-indigo-600 dark:text-indigo-400">
                 {prompts.length}
               </div>
-              <div className="text-[10px] font-bold uppercase tracking-wider text-[var(--muted)] mt-0.5">
+              <div className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-[var(--muted)] mt-0.5">
                 Tracked Queries
               </div>
             </div>
@@ -246,11 +246,11 @@ export function AeoWorkspace() {
         </div>
 
         {/* Action Controls */}
-        <div className="mt-8 pt-6 border-t border-[var(--line)]/60 flex flex-wrap items-center justify-between gap-4">
-          <div className="flex flex-wrap items-center gap-2">
+        <div className="mt-8 pt-6 border-t border-[var(--line)]/60 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
             <button
               onClick={() => setActiveSubView("overview")}
-              className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
+              className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
                 activeSubView === "overview"
                   ? "bg-purple-600 text-white shadow-md shadow-purple-600/20"
                   : "bg-[var(--panel)] border border-[var(--line)] text-[var(--muted)] hover:text-[var(--ink)]"
@@ -261,7 +261,7 @@ export function AeoWorkspace() {
 
             <button
               onClick={() => setActiveSubView("citations")}
-              className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
+              className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
                 activeSubView === "citations"
                   ? "bg-purple-600 text-white shadow-md shadow-purple-600/20"
                   : "bg-[var(--panel)] border border-[var(--line)] text-[var(--muted)] hover:text-[var(--ink)]"
@@ -272,28 +272,28 @@ export function AeoWorkspace() {
 
             <button
               onClick={() => setActiveSubView("opportunities")}
-              className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
+              className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
                 activeSubView === "opportunities"
                   ? "bg-purple-600 text-white shadow-md shadow-purple-600/20"
                   : "bg-[var(--panel)] border border-[var(--line)] text-[var(--muted)] hover:text-[var(--ink)]"
               }`}
             >
-              Content Gaps & Opportunities
+              Content Gaps
             </button>
           </div>
 
-          <div className="flex items-center gap-2.5">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
             <button
               onClick={() => setIsMasterModalOpen(true)}
-              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl border border-[var(--line)] bg-[var(--panel)] hover:bg-[var(--bg-2)] text-xs font-semibold text-[var(--ink)] transition-colors shadow-sm"
+              className="flex-1 sm:flex-none flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl border border-[var(--line)] bg-[var(--panel)] hover:bg-[var(--bg-2)] text-xs font-semibold text-[var(--ink)] transition-colors shadow-sm"
             >
               <Sparkles className="w-3.5 h-3.5 text-purple-500" />
-              <span>Sector Master Prompts</span>
+              <span>Master Prompts</span>
             </button>
 
             <button
               onClick={() => setIsAddingPrompt(!isAddingPrompt)}
-              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl border border-[var(--line)] bg-[var(--panel)] hover:bg-[var(--bg-2)] text-xs font-semibold text-[var(--ink)] transition-colors shadow-sm"
+              className="flex-1 sm:flex-none flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl border border-[var(--line)] bg-[var(--panel)] hover:bg-[var(--bg-2)] text-xs font-semibold text-[var(--ink)] transition-colors shadow-sm"
             >
               <Plus className="w-3.5 h-3.5 text-indigo-500" />
               <span>Add Query</span>
@@ -302,7 +302,7 @@ export function AeoWorkspace() {
             <button
               onClick={handleRunScan}
               disabled={scanning}
-              className="flex items-center gap-2 px-5 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs font-bold shadow-md shadow-purple-600/20 active:scale-95 transition-all disabled:opacity-50"
+              className="w-full sm:w-auto flex items-center justify-center gap-2 px-5 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs font-bold shadow-md shadow-purple-600/20 active:scale-95 transition-all disabled:opacity-50"
             >
               {scanning ? (
                 <>

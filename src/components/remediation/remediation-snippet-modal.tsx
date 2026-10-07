@@ -94,7 +94,7 @@ export function RemediationSnippetModal({ isOpen, onClose, domain }: Remediation
         </div>
 
         {/* Integration Stack Tabs */}
-        <div className="flex items-center gap-2 border-b border-[var(--line)] pb-3">
+        <div className="flex items-center gap-2 border-b border-[var(--line)] pb-3 overflow-x-auto no-scrollbar -mx-6 px-6 sm:mx-0 sm:px-0">
           {[
             { id: "html", label: "Standard HTML / Webflow" },
             { id: "nextjs", label: "Next.js / React" },
@@ -104,7 +104,7 @@ export function RemediationSnippetModal({ isOpen, onClose, domain }: Remediation
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
-              className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+              className={`shrink-0 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                 activeTab === tab.id
                   ? "bg-purple-600 text-white shadow-sm shadow-purple-600/25"
                   : "text-[var(--muted)] hover:text-[var(--ink)] hover:bg-[var(--bg-2)]"

@@ -58,3 +58,12 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Inter Tight', sans-serif;
   letter-spacing: -0.02em;
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

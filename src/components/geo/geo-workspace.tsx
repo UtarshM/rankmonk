@@ -212,24 +212,24 @@ export function GeoWorkspace() {
           </div>
 
           {/* Quick Stats Block */}
-          <div className="flex items-center gap-4 bg-[var(--panel)] border border-[var(--line)] p-4 rounded-2xl shadow-sm">
-            <div className="text-center px-3">
-              <div className="text-3xl font-black text-indigo-600 dark:text-indigo-400">
+          <div className="w-full lg:w-auto flex items-center justify-around sm:justify-start gap-3 sm:gap-4 bg-[var(--panel)] border border-[var(--line)] p-3 sm:p-4 rounded-2xl shadow-sm">
+            <div className="text-center px-2 sm:px-3">
+              <div className="text-2xl sm:text-3xl font-black text-indigo-600 dark:text-indigo-400">
                 {geoResult.overallScore}%
               </div>
-              <div className="text-[10px] font-bold uppercase tracking-wider text-[var(--muted)] mt-0.5">
+              <div className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-[var(--muted)] mt-0.5">
                 GEO Index
               </div>
             </div>
-            <div className="h-10 w-px bg-[var(--line)]" />
+            <div className="h-8 sm:h-10 w-px bg-[var(--line)]" />
             <div className="text-left space-y-1 text-xs">
               <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                <span className="font-semibold text-[var(--ink)]">5/5 AI Bots Allowed</span>
+                <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
+                <span className="font-semibold text-[var(--ink)] text-[11px] sm:text-xs">5/5 AI Bots Allowed</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-purple-500" />
-                <span className="font-semibold text-[var(--ink)]">llms.txt Active</span>
+                <span className="w-2 h-2 rounded-full bg-purple-500 shrink-0" />
+                <span className="font-semibold text-[var(--ink)] text-[11px] sm:text-xs">llms.txt Active</span>
               </div>
             </div>
           </div>
@@ -237,7 +237,7 @@ export function GeoWorkspace() {
 
         {/* Live URL Audit Bar */}
         <div className="mt-8 pt-6 border-t border-[var(--line)]/60">
-          <div className="flex flex-col sm:flex-row items-center gap-3">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3">
             <div className="relative flex-1 w-full">
               <Search className="w-4 h-4 text-[var(--muted)] absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
@@ -251,7 +251,7 @@ export function GeoWorkspace() {
             <button
               onClick={handleRunAudit}
               disabled={loading || !urlInput}
-              className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white text-xs font-bold shadow-md shadow-indigo-600/20 active:scale-95 transition-all disabled:opacity-50"
+              className="w-full sm:w-auto flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white text-xs font-bold shadow-md shadow-indigo-600/20 active:scale-95 transition-all disabled:opacity-50"
             >
               {loading ? (
                 <>
@@ -277,23 +277,23 @@ export function GeoWorkspace() {
       </div>
 
       {/* Navigation Sub-Tabs */}
-      <div className="flex items-center gap-2 border-b border-[var(--line)] pb-2 overflow-x-auto">
+      <div className="flex items-center gap-2 border-b border-[var(--line)] pb-2 overflow-x-auto no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0">
         <button
           onClick={() => setActiveTab("remediation")}
-          className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all ${
+          className={`shrink-0 flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-xl text-xs font-bold transition-all ${
             activeTab === "remediation"
               ? "bg-purple-600 text-white shadow-md shadow-purple-600/25"
               : "text-[var(--muted)] hover:text-[var(--ink)] hover:bg-[var(--bg-2)]"
           }`}
         >
           <Zap className="w-4 h-4 text-amber-300" />
-          <span>Autonomous Fixes (Actions Queue)</span>
+          <span>Actions Queue</span>
           <span className="px-1.5 py-0.5 rounded-full text-[10px] bg-white/20 font-bold">Live</span>
         </button>
 
         <button
           onClick={() => setActiveTab("scorecard")}
-          className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all ${
+          className={`shrink-0 flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-xl text-xs font-bold transition-all ${
             activeTab === "scorecard"
               ? "bg-indigo-600 text-white shadow-md shadow-indigo-600/20"
               : "text-[var(--muted)] hover:text-[var(--ink)] hover:bg-[var(--bg-2)]"
@@ -305,26 +305,26 @@ export function GeoWorkspace() {
 
         <button
           onClick={() => setActiveTab("eeat")}
-          className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all ${
+          className={`shrink-0 flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-xl text-xs font-bold transition-all ${
             activeTab === "eeat"
               ? "bg-indigo-600 text-white shadow-md shadow-indigo-600/20"
               : "text-[var(--muted)] hover:text-[var(--ink)] hover:bg-[var(--bg-2)]"
           }`}
         >
           <Award className="w-4 h-4" />
-          <span>EEAT & Platform Footprint</span>
+          <span>EEAT Footprint</span>
         </button>
 
         <button
           onClick={() => setActiveTab("crawlers")}
-          className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all ${
+          className={`shrink-0 flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-xl text-xs font-bold transition-all ${
             activeTab === "crawlers"
               ? "bg-indigo-600 text-white shadow-md shadow-indigo-600/20"
               : "text-[var(--muted)] hover:text-[var(--ink)] hover:bg-[var(--bg-2)]"
           }`}
         >
           <Bot className="w-4 h-4" />
-          <span>AI Crawlers & Robots.txt</span>
+          <span>AI Crawlers & Robots</span>
         </button>
       </div>
 

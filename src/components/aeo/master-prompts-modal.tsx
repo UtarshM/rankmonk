@@ -225,7 +225,7 @@ export function MasterPromptsModal({ isOpen, onClose, projectId, onSuccess }: Ma
         </div>
 
         {/* Footer Actions */}
-        <div className="flex items-center justify-between px-6 py-4 border-t border-[var(--line)] bg-[var(--bg-2)]/60">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 px-6 py-4 border-t border-[var(--line)] bg-[var(--bg-2)]/60">
           <label className="flex items-center gap-2 cursor-pointer text-xs text-[var(--muted)] hover:text-[var(--ink)]">
             <input
               type="checkbox"
@@ -236,17 +236,17 @@ export function MasterPromptsModal({ isOpen, onClose, projectId, onSuccess }: Ma
             <span>Replace existing project prompts instead of appending</span>
           </label>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5 w-full sm:w-auto">
             <button
               onClick={onClose}
-              className="px-4 py-2 rounded-xl text-xs font-medium text-[var(--muted)] hover:text-[var(--ink)] hover:bg-[var(--line)] transition-colors"
+              className="flex-1 sm:flex-none justify-center px-4 py-2.5 rounded-xl text-xs font-medium text-[var(--muted)] hover:text-[var(--ink)] hover:bg-[var(--line)] transition-colors"
             >
               Cancel
             </button>
             <button
               onClick={handleImport}
               disabled={importing}
-              className="flex items-center gap-2 px-5 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold shadow-lg shadow-purple-600/30 transition-all active:scale-95 disabled:opacity-50"
+              className="flex-1 sm:flex-none justify-center flex items-center gap-2 px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold shadow-lg shadow-purple-600/30 transition-all active:scale-95 disabled:opacity-50"
             >
               {importing ? (
                 <>

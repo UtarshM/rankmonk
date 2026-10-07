@@ -220,10 +220,10 @@ ${gap.brief.schemaExample}
                 </div>
               </div>
 
-              <div className="flex items-center gap-2 shrink-0">
+              <div className="flex items-center gap-2 w-full md:w-auto shrink-0">
                 <button
                   onClick={() => setActiveModalGap(gap)}
-                  className="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold shadow-md shadow-purple-600/20 transition-all flex items-center gap-2"
+                  className="w-full md:w-auto px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold shadow-md shadow-purple-600/20 transition-all flex items-center justify-center gap-2"
                 >
                   <Sparkles className="w-3.5 h-3.5" />
                   <span>Generate Content Brief</span>
@@ -308,14 +308,14 @@ ${gap.brief.schemaExample}
             </div>
 
             {/* Modal Footer */}
-            <div className="px-6 py-4 border-t border-[var(--line)] bg-[var(--bg-2)]/50 flex items-center justify-between">
+            <div className="px-6 py-4 border-t border-[var(--line)] bg-[var(--bg-2)]/50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
               <span className="text-[11px] text-[var(--muted)]">
-                Targeting: {activeModalGap.citedCompetitor} citation replacement
+                Targeting: <strong>{activeModalGap.citedCompetitor}</strong> citation replacement
               </span>
 
               <button
                 onClick={() => handleCopyBrief(activeModalGap)}
-                className="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold flex items-center gap-2 shadow-md transition-all"
+                className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold flex items-center justify-center gap-2 shadow-md transition-all text-xs"
               >
                 {copiedBrief ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
                 <span>{copiedBrief ? "Copied Markdown!" : "Copy Full Markdown Brief"}</span>

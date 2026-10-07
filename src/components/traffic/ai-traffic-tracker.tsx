@@ -210,12 +210,12 @@ export function AiTrafficTracker({ domain = "rankmonk.ai" }: { domain?: string }
             </p>
           </div>
 
-          <div className="inline-flex p-1 rounded-xl bg-[var(--bg-2)] border border-[var(--line)] text-xs font-semibold">
+          <div className="flex items-center gap-1 p-1 rounded-xl bg-[var(--bg-2)] border border-[var(--line)] text-xs font-semibold overflow-x-auto no-scrollbar max-w-full">
             {["All", "ChatGPT", "Perplexity", "Claude", "Gemini"].map((tab) => (
               <button
                 key={tab}
                 onClick={() => setSelectedEngine(tab)}
-                className={`px-3 py-1.5 rounded-lg transition-all ${
+                className={`shrink-0 px-3 py-1.5 rounded-lg transition-all ${
                   selectedEngine === tab
                     ? "bg-[var(--panel)] text-[var(--ink)] shadow-sm font-bold border border-[var(--line)]"
                     : "text-[var(--muted)] hover:text-[var(--ink)]"
@@ -339,7 +339,7 @@ export function AiTrafficTracker({ domain = "rankmonk.ai" }: { domain?: string }
               />
             </div>
 
-            <div className="grid grid-cols-3 gap-2">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
               <div>
                 <label className="block text-[10px] font-bold text-[var(--muted)] mb-1">utm_source</label>
                 <select
@@ -379,12 +379,12 @@ export function AiTrafficTracker({ domain = "rankmonk.ai" }: { domain?: string }
             {/* Generated Link Box */}
             <div className="p-3 rounded-xl border border-[var(--line)] bg-[var(--bg)] space-y-2">
               <span className="text-[10px] font-bold uppercase tracking-wider text-[var(--muted)]">Generated Tracking Link:</span>
-              <div className="font-mono text-xs text-purple-600 dark:text-purple-400 break-all select-all">
+              <div className="font-mono text-xs text-purple-600 break-all select-all">
                 {generatedUtmUrl}
               </div>
               <button
                 onClick={() => copyToClipboard(generatedUtmUrl, "url")}
-                className="w-full py-1.5 rounded-lg bg-purple-600 hover:bg-purple-500 text-white font-bold flex items-center justify-center gap-1.5 transition-colors"
+                className="w-full py-2 rounded-lg bg-purple-600 hover:bg-purple-500 text-white font-bold flex items-center justify-center gap-1.5 transition-colors text-xs"
               >
                 {copiedUrl ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
                 <span>{copiedUrl ? "Copied to Clipboard!" : "Copy Tracking URL"}</span>
@@ -395,23 +395,23 @@ export function AiTrafficTracker({ domain = "rankmonk.ai" }: { domain?: string }
       </div>
 
       {/* GA4 Setup Instruction Banner */}
-      <div className="rounded-2xl border border-purple-500/20 bg-purple-500/5 p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <div className="rounded-2xl border border-purple-500/20 bg-purple-500/5 p-4 sm:p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div className="space-y-1">
-          <h4 className="text-xs font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400 flex items-center gap-2">
+          <h4 className="text-xs font-bold uppercase tracking-wider text-purple-600 flex items-center gap-2">
             <Code2 className="w-4 h-4" />
             <span>GA4 Custom Channel Grouping Rule</span>
           </h4>
           <p className="text-xs text-[var(--muted)]">
             Create an "AI Referral" channel in Google Analytics 4 using this Source Regex filter to separate LLM visits from traditional organic search.
           </p>
-          <code className="text-xs font-mono font-bold text-[var(--ink)] bg-[var(--panel)] px-2 py-1 rounded border border-[var(--line)] inline-block mt-1">
+          <code className="text-xs font-mono font-bold text-[var(--ink)] bg-[var(--panel)] px-2 py-1 rounded border border-[var(--line)] inline-block mt-1 break-all">
             Source matches regex: {ga4Regex}
           </code>
         </div>
 
         <button
           onClick={() => copyToClipboard(ga4Regex, "ga4")}
-          className="shrink-0 px-4 py-2 rounded-xl bg-[var(--panel)] hover:bg-[var(--bg-2)] border border-[var(--line)] text-xs font-bold text-[var(--ink)] transition-colors flex items-center gap-2"
+          className="w-full md:w-auto shrink-0 justify-center px-4 py-2 rounded-xl bg-[var(--panel)] hover:bg-[var(--bg-2)] border border-[var(--line)] text-xs font-bold text-[var(--ink)] transition-colors flex items-center gap-2"
         >
           {copiedGa4 ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5" />}
           <span>{copiedGa4 ? "Regex Copied!" : "Copy GA4 Regex"}</span>

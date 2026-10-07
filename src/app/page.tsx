@@ -50,19 +50,19 @@ export default function UnifiedOverviewPage() {
 
       <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
         {isAuthenticated && (
-          <div className="max-w-xl mx-auto p-3.5 rounded-2xl bg-purple-500/10 border border-purple-500/25 flex items-center justify-between text-xs animate-in fade-in shadow-sm">
-            <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-xl bg-purple-600 text-white flex items-center justify-center font-bold shadow-sm shadow-purple-600/30">
+          <div className="max-w-xl mx-auto p-3.5 rounded-2xl bg-purple-500/10 border border-purple-500/25 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs animate-in fade-in shadow-sm">
+            <div className="flex items-center gap-2.5 min-w-0">
+              <div className="w-8 h-8 rounded-xl bg-purple-600 text-white flex items-center justify-center font-bold shadow-sm shadow-purple-600/30 shrink-0">
                 <Sparkles className="w-4 h-4 text-purple-200" />
               </div>
-              <div>
-                <span className="font-bold text-[var(--ink)] block">Session Active: {user?.name || user?.email}</span>
-                <span className="text-[11px] text-[var(--muted)]">Workspace: <strong>{domain}</strong> ({user?.plan} tier)</span>
+              <div className="min-w-0">
+                <span className="font-bold text-[var(--ink)] block truncate">Session Active: {user?.name || user?.email}</span>
+                <span className="text-[11px] text-[var(--muted)] truncate block">Workspace: <strong>{domain}</strong> ({user?.plan} tier)</span>
               </div>
             </div>
             <Link
               href="/aeo"
-              className="px-4 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-bold text-xs flex items-center gap-1.5 shadow-md shadow-purple-600/20 active:scale-95 transition-all"
+              className="w-full sm:w-auto px-4 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-md shadow-purple-600/20 active:scale-95 transition-all shrink-0"
             >
               <span>Go to Workspace</span>
               <ArrowRight className="w-3.5 h-3.5" />

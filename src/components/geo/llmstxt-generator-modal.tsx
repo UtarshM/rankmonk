@@ -79,24 +79,24 @@ export function LlmsTxtGeneratorModal({ isOpen, onClose }: LlmsTxtGeneratorModal
 
         {/* Content */}
         <div className="p-6 space-y-4">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="flex items-center gap-2 text-xs text-[var(--muted)]">
               <span>Host at:</span>
-              <code className="px-2 py-0.5 rounded bg-[var(--bg-2)] border border-[var(--line)] font-mono text-[var(--ink)]">
+              <code className="px-2 py-0.5 rounded bg-[var(--bg-2)] border border-[var(--line)] font-mono text-[var(--ink)] break-all">
                 https://{domain}/llms.txt
               </code>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 w-full sm:w-auto">
               <button
                 onClick={handleCopy}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[var(--line)] bg-[var(--bg-2)] hover:bg-[var(--line)] text-xs font-semibold text-[var(--ink)] transition-colors"
+                className="flex-1 sm:flex-none justify-center flex items-center gap-1.5 px-3 py-2 rounded-xl border border-[var(--line)] bg-[var(--bg-2)] hover:bg-[var(--line)] text-xs font-semibold text-[var(--ink)] transition-colors"
               >
                 {copied ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5" />}
                 <span>{copied ? "Copied" : "Copy"}</span>
               </button>
               <button
                 onClick={handleDownload}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold shadow-sm transition-colors"
+                className="flex-1 sm:flex-none justify-center flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold shadow-sm transition-colors"
               >
                 <Download className="w-3.5 h-3.5" />
                 <span>Download .txt</span>

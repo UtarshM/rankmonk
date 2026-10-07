@@ -147,10 +147,10 @@ export function RemediationActionsCard({ domain }: RemediationActionsCardProps) 
           </div>
 
           {/* Action CTAs */}
-          <div className="flex items-center gap-2.5">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
             <button
               onClick={() => setIsSnippetModalOpen(true)}
-              className="px-3.5 py-2 rounded-xl border border-[var(--line)] hover:bg-[var(--bg-2)] text-xs font-bold flex items-center gap-2 transition-colors"
+              className="flex-1 sm:flex-none px-3.5 py-2 rounded-xl border border-[var(--line)] hover:bg-[var(--bg-2)] text-xs font-bold flex items-center justify-center gap-2 transition-colors"
             >
               <Code2 className="w-3.5 h-3.5 text-purple-600" />
               <span>Install Runtime SDK</span>
@@ -159,7 +159,7 @@ export function RemediationActionsCard({ domain }: RemediationActionsCardProps) 
             <button
               onClick={handleDeployAll}
               disabled={batchDeploying || pendingCount === 0}
-              className="px-4 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs font-bold shadow-md shadow-purple-600/25 flex items-center gap-2 disabled:opacity-50 transition-all active:scale-95"
+              className="flex-1 sm:flex-none px-4 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs font-bold shadow-md shadow-purple-600/25 flex items-center justify-center gap-2 disabled:opacity-50 transition-all active:scale-95"
             >
               {batchDeploying ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Play className="w-3.5 h-3.5 fill-current" />}
               <span>Deploy All ({pendingCount})</span>
@@ -175,31 +175,31 @@ export function RemediationActionsCard({ domain }: RemediationActionsCardProps) 
           </div>
 
           <div className="p-3 rounded-xl bg-purple-500/5 border border-purple-500/20">
-            <div className="text-[11px] font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider">Live Injected</div>
-            <div className="text-xl font-black text-purple-600 dark:text-purple-400 mt-0.5">{appliedCount}</div>
+            <div className="text-[11px] font-bold text-purple-600 uppercase tracking-wider">Live Injected</div>
+            <div className="text-xl font-black text-purple-600 mt-0.5">{appliedCount}</div>
           </div>
 
           <div className="p-3 rounded-xl bg-emerald-500/5 border border-emerald-500/20">
-            <div className="text-[11px] font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider flex items-center gap-1">
+            <div className="text-[11px] font-bold text-emerald-600 uppercase tracking-wider flex items-center gap-1">
               <CheckCircle2 className="w-3.5 h-3.5" />
               <span>Beacon Verified</span>
             </div>
-            <div className="text-xl font-black text-emerald-600 dark:text-emerald-400 mt-0.5">{verifiedCount}</div>
+            <div className="text-xl font-black text-emerald-600 mt-0.5">{verifiedCount}</div>
           </div>
 
           <div className="p-3 rounded-xl bg-amber-500/5 border border-amber-500/20">
-            <div className="text-[11px] font-bold text-amber-600 dark:text-amber-400 uppercase tracking-wider">Pending Deploy</div>
-            <div className="text-xl font-black text-amber-600 dark:text-amber-400 mt-0.5">{pendingCount}</div>
+            <div className="text-[11px] font-bold text-amber-600 uppercase tracking-wider">Pending Deploy</div>
+            <div className="text-xl font-black text-amber-600 mt-0.5">{pendingCount}</div>
           </div>
         </div>
 
         {/* Filter Pills */}
-        <div className="flex flex-wrap gap-1.5 mt-4 pt-4 border-t border-[var(--line)]/60">
+        <div className="flex items-center gap-1.5 mt-4 pt-4 border-t border-[var(--line)]/60 overflow-x-auto no-scrollbar -mx-6 px-6 sm:mx-0 sm:px-0">
           {["All", "Structure", "Readability", "Authority", "Technical", "Applied", "Verified"].map((filter) => (
             <button
               key={filter}
               onClick={() => setSelectedFilter(filter)}
-              className={`px-3 py-1 rounded-lg text-xs font-semibold transition-all ${
+              className={`shrink-0 px-3 py-1 rounded-lg text-xs font-semibold transition-all ${
                 selectedFilter === filter
                   ? "bg-purple-600 text-white shadow-sm shadow-purple-600/20"
                   : "bg-[var(--bg-2)]/60 text-[var(--muted)] hover:text-[var(--ink)] hover:bg-[var(--bg-2)]"
@@ -255,10 +255,10 @@ export function RemediationActionsCard({ domain }: RemediationActionsCardProps) 
                   </div>
 
                   {/* Status & CTA buttons */}
-                  <div className="flex items-center gap-2.5 self-end sm:self-auto shrink-0">
+                  <div className="flex flex-wrap items-center gap-2 self-start sm:self-auto shrink-0">
                     {/* Status indicator */}
                     {isVerified ? (
-                      <span className="px-2.5 py-1 rounded-lg text-xs font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 flex items-center gap-1.5">
+                      <span className="px-2.5 py-1 rounded-lg text-xs font-bold bg-emerald-500/10 text-emerald-600 border border-emerald-500/20 flex items-center gap-1.5">
                         <CheckCircle2 className="w-3.5 h-3.5" />
                         <span>Verified Live</span>
                       </span>
